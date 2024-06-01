@@ -39,6 +39,8 @@ class PomodoroPage extends StatelessWidget {
               Timercard(),
               SizedBox(height: 40),
               TimerOptions(),
+              SizedBox(height: 40),
+              TimerController(),
             ],
           ),
         ),
