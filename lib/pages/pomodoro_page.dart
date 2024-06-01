@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/utils/utils.dart';
+import 'package:pomodoro/widgets/widgets.dart';
 
 class PomodoroPage extends StatelessWidget {
   const PomodoroPage({super.key});
@@ -7,6 +8,7 @@ class PomodoroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.redAccent,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.redAccent,
@@ -27,6 +29,18 @@ class PomodoroPage extends StatelessWidget {
             onPressed: () {},
           ),
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          child: const Column(
+            children: [
+               SizedBox(height: 15),
+               Timercard(),
+
+            ],
+          ),
+        ),
       ),
     );
   }
