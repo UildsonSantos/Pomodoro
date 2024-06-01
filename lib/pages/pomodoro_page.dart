@@ -35,9 +35,10 @@ class PomodoroPage extends StatelessWidget {
           alignment: Alignment.center,
           child: const Column(
             children: [
-               SizedBox(height: 15),
-               Timercard(),
-
+              SizedBox(height: 15),
+              Timercard(),
+              SizedBox(height: 40),
+              TimerOptions(),
             ],
           ),
         ),
