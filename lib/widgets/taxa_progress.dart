@@ -37,7 +37,7 @@ class TaxaProgress extends StatelessWidget {
               'ROUND',
               style: textStyle(
                 size: 30,
-                color: Colors.grey[350],
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -45,7 +45,7 @@ class TaxaProgress extends StatelessWidget {
               'GOAL',
               style: textStyle(
                 size: 30,
-                color: Colors.grey[350],
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
