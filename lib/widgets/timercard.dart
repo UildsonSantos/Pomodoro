@@ -14,7 +14,7 @@ class Timercard extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'FOCUS',
+          provider.currentState,
           style: textStyle(
             size: 35,
             fontWeight: FontWeight.bold,

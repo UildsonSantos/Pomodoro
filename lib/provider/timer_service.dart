@@ -7,12 +7,19 @@ class TimerService extends ChangeNotifier {
   double currentDuration = 1500;
   double selectedTime = 1500;
   bool timerPlaying = false;
+  int rounds = 0;
+  int goal = 0;
+  String currentState = 'FOCUS';
 
   void start() {
     timerPlaying = true;
     timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      currentDuration--;
-      notifyListeners();
+      if (currentDuration == 0) {
+        handleNextRound();
+      } else {
+        currentDuration--;
+        notifyListeners();
+      }
     });
   }
 
@@ -25,6 +32,32 @@ class TimerService extends ChangeNotifier {
   void selectTimer(double seconds) {
     selectedTime = seconds;
     currentDuration = seconds;
+    notifyListeners();
+  }
+
+  void handleNextRound() {
+    if (currentState == 'FOCUS') {
+      currentState = 'BREAK';
+      currentDuration = 300;
+      selectedTime = 300;
+      rounds++;
+      goal++;
+    } else if (currentState == 'BREAK') {
+      currentState = 'FOCUS';
+      currentDuration = 1500;
+      selectedTime = 1500;
+    } else if (currentState == 'FOCUS' && rounds == 3) {
+      currentState = 'LONGBREAK';
+      currentDuration = 1500;
+      selectedTime = 1500;
+      rounds++;
+      goal++;
+    } else if (currentState == 'LONGBREAK') {
+      currentState = 'FOCUS';
+      currentDuration = 1500;
+      selectedTime = 1500;
+      rounds = 0;
+    }
     notifyListeners();
   }
 }
