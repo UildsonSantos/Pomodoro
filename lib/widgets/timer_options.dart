@@ -38,7 +38,7 @@ class TimerOptions extends StatelessWidget {
                     size: 25,
                     fontWeight: FontWeight.bold,
                     color: int.parse(time) == provider.selectedTime
-                        ? Colors.redAccent
+                        ? renderColor(provider.currentState)
                         : Colors.white,
                   ),
                 ),

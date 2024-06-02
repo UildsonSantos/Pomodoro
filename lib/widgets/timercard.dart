@@ -44,7 +44,7 @@ class Timercard extends StatelessWidget {
                   (provider.currentDuration ~/ 60).toString(),
                   style: textStyle(
                       size: 80,
-                      color: Colors.redAccent,
+                      color: renderColor(provider.currentState),
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -80,7 +80,7 @@ class Timercard extends StatelessWidget {
                       : seconds.round().toString(),
                   style: textStyle(
                       size: 80,
-                      color: Colors.redAccent,
+                      color: renderColor(provider.currentState),
                       fontWeight: FontWeight.bold),
                 ),
               ),

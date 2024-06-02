@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro/provider/provider.dart';
 import 'package:pomodoro/utils/utils.dart';
 import 'package:pomodoro/widgets/widgets.dart';
+import 'package:provider/provider.dart';
 
 class PomodoroPage extends StatelessWidget {
   const PomodoroPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TimerService>(context);
     return Scaffold(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: renderColor(provider.currentState),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: renderColor(provider.currentState),
         title: Text(
           'PROMOTIMER',
           style: textStyle(
