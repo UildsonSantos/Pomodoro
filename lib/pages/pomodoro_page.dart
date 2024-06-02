@@ -29,7 +29,8 @@ class PomodoroPage extends StatelessWidget {
               color: Colors.white,
             ),
             iconSize: 40,
-            onPressed: () {},
+            onPressed: () =>
+                Provider.of<TimerService>(context, listen: false).reset(),
           ),
         ],
       ),
